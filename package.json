@@ -1,0 +1,23 @@
+{
+  "name": "tinyurl",
+  "version": "1.0.0",
+  "description": "A full-stack practice project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiJunpeng/tinyurl.git"
+  },
+  "author": "Junpeng Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiJunpeng/tinyurl/issues"
+  },
+  "homepage": "https://github.com/LiJunpeng/tinyurl#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
