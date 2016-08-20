@@ -1,14 +1,22 @@
 
-// var express = require('express');
-// var app = express();
-// var restRouter = require('./routes/rest');
-// var redirectRouter = require('./routes/redirect');
+var express = require('express');
+var app = express();
+var restRouter = require('./routes/rest');
+var redirectRouter = require('./routes/redirect');
+var indexRouter = require('./routes/index');
 
-// app.use('/api/v1', restRouter);
+app.longToShortHash = {};
+app.shortToLongHash = {};   // 为了方便用全局变量object，实际项目中不要这样做   
 
-// app.use('/:shortUrl', redirectRouter);
+app.use('/public', express.static(__dirname + "/public")); // browser请求的文件放在public里,作为静态文件。在当前目录下的public目录下找相应的静态文件
 
-// app.listen(3000);
+app.use('/api/v1', restRouter);
+
+app.use('/:shortUrl', redirectRouter); // 冒号后的字符串视为变量
+
+app.use('/', indexRouter);
+
+app.listen(3000);
 
 
 
@@ -38,12 +46,13 @@
 
 // ================== express ===========================
 
-var express = require('express');
-var app = express();
+// var express = require('express');   // 没有目录，检查node核心、node_modules
+// var app = express();
+// var apiRouter = require('./routes/api');  // 自己写的，加路径
 
-app.get('/', function (req, res){
-    res.send("express server!!!!");
-});
+// app.get('/', function (req, res){
+//     res.send("express server");
+// });
 
-app.listen(3000);
+// app.listen(3000);
 
