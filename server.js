@@ -4,6 +4,9 @@ var app = express();
 var restRouter = require('./routes/rest');
 var redirectRouter = require('./routes/redirect');
 var indexRouter = require('./routes/index');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://junpeng:12345@ds047632.mlab.com:47632/tiny_url');
 
 app.longToShortHash = {};
 app.shortToLongHash = {};   // 为了方便用全局变量object，实际项目中不要这样做   
