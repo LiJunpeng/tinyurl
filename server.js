@@ -23,8 +23,6 @@ app.listen(3000);
 
 
 
-
-
 // ================= pure node.js 1 =====================
 // var http = require('http');
 
